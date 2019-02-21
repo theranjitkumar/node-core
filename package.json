@@ -2,9 +2,11 @@
   "name": "node-core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js",
+    "nodemon": "nodemon app.js",
+    "mongoose": "nodemon mongoose.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,11 @@
   },
   "homepage": "https://github.com/theranjitkumar/node-core#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hapi": "^17.6.0",
     "mongodb": "^3.1.13",
+    "mongoose": "^5.4.14",
     "mysql": "^2.16.0",
     "nodemailer": "^5.1.1"
   }

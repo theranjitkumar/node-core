@@ -8,7 +8,7 @@ app.get('/users', function (req, res) {
     mongoClient.connect(url, {useNewUrlParser: true}, function (err, db) {
         if (err) throw err;
         var dbo = db.db("blogapp");
-        dbo.collection('users').find({}).toArray(function (err, result) {
+        dbo.collection('users').find({}).sort({id:1}).toArray(function (err, result) {
             if (err) throw err;
             // console.log(result);
             res.send(result);
