@@ -1,7 +1,6 @@
 var nodemailer = require('nodemailer');
 
 var EMD = {};
-module.exports = EMD;
 
 EMD.dispatchMail = function () {
   var transporter = nodemailer.createTransport({
@@ -37,3 +36,4 @@ EMD.dispatchMail = function () {
   });
 }
 
+module.exports = EMD;
