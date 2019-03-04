@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// file upload routes importing
+// routers importing
 const fileuploadRoute = require('./expressjs/fileuploadRoute');
 const sendMailRoute = require('./expressjs/mailSendRoute');
 

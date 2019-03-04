@@ -17,7 +17,7 @@ app.get('/users', function (req, res) {
     })
 });
 
-app.get('/user/:id', function (req, res) {
+app.get('/users/:id', function (req, res) {
    
     mongoClient.connect(url, {useNewUrlParser: true}, function (err, db) {
         if (err) throw err;
@@ -35,3 +35,5 @@ app.get('/user/:id', function (req, res) {
 
 
 app.listen('3000');
+
+module.exports = app;

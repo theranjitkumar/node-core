@@ -23,6 +23,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hapi": "^17.6.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.14",
     "multer": "^1.4.1",

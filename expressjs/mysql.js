@@ -25,7 +25,11 @@ app.get('/', function (req, res) {
     con.query(query, function (err, result, fields) {
         if (err) throw err;
         console.log(result);
-        res.send(result);
+        res.status(200).json({
+            status: true,
+            message: 'data fetched successfully',
+            data: result
+        });
     });
 });
 
@@ -35,7 +39,11 @@ app.get('/state/:stateId', function (req, res) {
     con.query(query, function (err, result, fields) {
         if (err) throw err;
         console.log(isMysqlConnected);
-        res.send(result);
+        res.status(200).json({
+            status: true,
+            message: 'data fetched successfully',
+            data: result
+        });
     });
 });
 
@@ -43,7 +51,11 @@ app.get('/students', function (req, res) {
     var query = `CALL test.students()`; // storre procedure used
     con.query(query, function (err, result, fields) {
         if (err) throw err;
-        res.send(result);
+        res.status(200).json({
+            status: true,
+            message: 'data fetched successfully',
+            data: result
+        });
     });
 });
 
@@ -53,7 +65,11 @@ app.get('/student/:studentId', function (req, res) {
     con.query(query, function (err, result, fields) {
         if (err) throw err;
         console.log(typeof(sid));
-        res.send(result);
+        res.status(200).json({
+            status: true,
+            message: 'data fetched successfully',
+            data: result
+        });
     });
 });
 

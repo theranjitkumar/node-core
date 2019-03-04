@@ -18,8 +18,16 @@ con.connect(function (err) {
 });
 
 server.route({
+	method:'GET',
+	path:'/',
+	handler: function(request, reply){
+	return 'Hello Hapijs<br><a href="./students">Go to Students api</a>';
+	}
+});
+
+server.route({
     method: 'GET',
-    path: '/',
+    path: '/students',
     handler: function (request, reply) {
         con.query('select * from student', function (err, result, fields) {
             if (err) throw err;
@@ -37,7 +45,6 @@ server.route({
     }
 });
 
-
 async function start() {
 
     try {
@@ -51,3 +58,5 @@ async function start() {
 };
 
 start();
+
+module.exports = server;
