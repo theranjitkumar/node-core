@@ -5,7 +5,7 @@ var isMysqlConnected = false;
 var con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'test'
 });
 
@@ -32,6 +32,7 @@ app.get('/', function (req, res) {
         });
     });
 });
+
 
 app.get('/state/:stateId', function (req, res) {
     var sid = req.params.stateId;
@@ -64,7 +65,7 @@ app.get('/student/:studentId', function (req, res) {
     var query = `CALL test.student(1)`; // paramiterised storre procedure used
     con.query(query, function (err, result, fields) {
         if (err) throw err;
-        console.log(typeof(sid));
+        console.log(typeof (sid));
         res.status(200).json({
             status: true,
             message: 'data fetched successfully',
@@ -72,6 +73,20 @@ app.get('/student/:studentId', function (req, res) {
         });
     });
 });
+
+app.get('/user', function (req, res) {
+    var query = `select * from test.user`;
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        console.log(isMysqlConnected);
+        res.status(200).json({
+            status: true,
+            message: 'user fetched successfully',
+            data: result
+        });
+    });
+});
+
 
 app.listen('3000');
 
